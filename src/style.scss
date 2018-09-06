@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "Digital";
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff") format("woff"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7") format("svg");
+}
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-family: Lato, Helvetica, sans-serif;
+  background-color: black;
+  color: #eee;
+  text-align: center;
+}
+
+#pomodoro-app {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  margin: 0;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+#pomodoro {
+  overflow: hidden;
+  background: url('assets/tomato.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 100%;
+  max-width: 600px;
+  min-width: 250px;
+  height: 100vw;
+  max-height: 600px;
+
+  box-sizing: border-box;
+  margin: 0 auto;
+
+  @media screen and (max-width: 480px) {
+    background-size: 460px;
+    background-position: center bottom;
+    height: 480px;
+    padding-top: 150px;
+  }
+}
+
+button {
+  background: #f90;
+  font-size: 2em;
+  color: #a50;
+  cursor: pointer;
+  border: 1px solid #a50;
+
+  &:hover {
+    background-color: #fa2;
+  }
+}
+
+#settings {
+  display: flex;
+
+  display: row nowrap;
+  justify-content: space-around;
+
+  @media only screen and (min-width: 481px) {
+    margin-top: 35%;
+  }
+
+  button {
+    width: 1.5em; height: 1.5em;
+    margin: 2px;
+    padding: 0;
+    border-radius: 50%;
+  }
+  #session-label, #break-label {
+    text-transform: capitalize;
+  }
+
+  #session-length, #break-length {
+    font-size: 2em;
+    line-height: 1.5em;
+  }
+}
+
+#timer {
+  width: 80%;
+  background-color: #ff9900;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 3px inset orange;
+
+  font-family: Digital, monospace;
+  color: #a50;
+
+  #timer-label {
+    overflow: visible;
+    height: 0;
+  }
+  #time-left {
+    font-size: 80px;
+  }
+
+  .blink {
+    animation: blink 1s steps(4, start) infinite;
+    -webkit-animation: blink 1s steps(4, start) infinite;
+  }
+}
+
+#controller {
+  margin-top: .5em;
+  display: flex;
+  justify-content: center;
+
+  button {
+    width: 2.5em;
+    word-wrap: none;
+    margin: 10px;
+    padding: 0 10px;
+    border-radius: 10px;
+  }
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
